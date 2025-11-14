@@ -1,0 +1,49 @@
+/* ===========================
+🌍 ОСНОВНЫЕ ПЕРЕМЕННЫЕ
+=========================== */
+:root {
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --bg: #f8fafc;
+  --bg-light: #ffffff;
+  --bg-dark: #f5f7fa;
+  --text: #1e293b;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --card-bg: #ffffff;
+  --radius: 14px;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  --transition: 0.3s ease;
+}
+
+/* ===========================
+🧱 БАЗОВЫЙ СТИЛЬ
+=========================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+}
+
+body {
+  font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  background-color: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  min-height: 100vh;
+
+  max-width: 850px;
+  margin: 0 auto;
+  
+}
+

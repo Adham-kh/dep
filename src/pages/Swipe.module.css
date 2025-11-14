@@ -1,0 +1,295 @@
+/* Swipe.module.css */
+
+/* 🌈 ФИКСИРОВАННЫЙ ФОН - создает градиентный фон на весь экран */
+.background {
+    position: fixed;    /* Фиксированное позиционирование относительно окна браузера */
+    inset: 0;           /* Растягивает элемент на всю площадь (top, right, bottom, left = 0) */
+    background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%); /* Розовый градиент под углом 135° */
+    z-index: 0;         /* Помещает фон на самый нижний слой */
+}
+
+/* 🎯 ОСНОВНОЙ КОНТЕЙНЕР - обертка для всего контента поверх фона */
+.container {
+    position: relative; /* Создает новый контекст позиционирования для дочерних элементов */
+    z-index: 1;         /* Поднимает контейнер над фоном (z-index: 0) */
+    display: flex;      /* Включает Flexbox layout */
+    flex-direction: column; /* Располагает дочерние элементы в колонку (вертикально) */
+    height: 100vh;      /* Занимает 100% высоты окна просмотра (viewport height) */
+    overflow: hidden;   /* Скрывает любой контент, выходящий за границы контейнера */
+}
+
+/* 🏷️ Заголовок приложения */
+.appTitle {
+    font-size: 1.4rem;      /* Размер шрифта 22.4px (1.4 × 16px) */
+    font-weight: 700;       /* Жирное начертание шрифта */
+    color: #e91e63;         /* Розовый цвет текста */
+    margin-bottom: 0.5rem;  /* Отступ снизу 8px (0.5 × 16px) */
+}
+
+/* 👤 Имя пользователя */
+.userName {
+    font-size: 1.1rem;      /* Размер шрифта 17.6px */
+    font-weight: 600;       /* Полужирное начертание */
+    color: #333;            /* Темно-серый цвет текста */
+}
+
+/* 📍 Местоположение пользователя */
+.userLocation {
+    font-size: 0.9rem;      /* Размер шрифта 14.4px */
+    color: #666;            /* Серый цвет текста */
+}
+
+/* === КАРТОЧКА ПОЛЬЗОВАТЕЛЯ === */
+
+/* 🎴 Контейнер для карточки */
+.cardContainer {
+    position: fixed;        /* Фиксированное позиционирование относительно окна */
+    top: 100px;             /* Отступ сверху 100px от верхней границы окна */
+    left: 0;                /* Прижимает к левому краю */
+    right: 0;               /* Прижимает к правому краю */
+    display: flex;          /* Flexbox для центрирования карточки */
+    justify-content: center;/* Горизонтальное центрирование дочерних элементов */
+    z-index: 20;            /* Поднимает выше других элементов (кроме навигации) */
+}
+
+/* 🃏 Сама карточка пользователя */
+.card {
+    width: 90%;             /* Ширина 90% от родительского контейнера */
+    max-width: 400px;       /* Максимальная ширина 400px (на больших экранах) */
+    height: 60vh;           /* Высота 60% от высоты окна просмотра */
+    background-size: cover; /* Масштабирует фоновое изображение чтобы покрыть всю карточку */
+    background-position: center; /* Центрирует фоновое изображение */
+    border-radius: 20px;    /* Закругление углов 20px */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25); /* Тень: X=0, Y=15px, размытие 35px, прозрачность 25% */
+    position: relative;     /* Относительное позиционирование для внутренних абсолютно позиционированных элементов */
+    overflow: hidden;       /* Скрывает содержимое, выходящее за границы карточки */
+    cursor: grab;           /* Курсор в виде руки для перетаскивания (обычное состояние) */
+    transition: transform 0.2s ease; /* Плавная анимация трансформации за 0.2 секунды */
+}
+
+/* 🖱️ Состояние перетаскивания карточки */
+.card:active {
+    cursor: grabbing;       /* Меняет курсор на "захваченный" при нажатии на карточку */
+}
+/* === Информация на карточке === */
+.info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: #fff;
+    padding: 2rem 1.5rem 1.5rem;
+    border-radius: 0 0 20px 20px;
+}
+
+.info h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.info p {
+    margin: 0;
+    font-size: 1rem;
+    opacity: 0.9;
+    line-height: 1.4;
+}
+
+/* === Индикатор свайпа === */
+.swipeIndicator {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    border: 4px solid;
+    border-radius: 15px;
+    z-index: 10;
+    animation: pulse 0.4s ease-in-out;
+}
+
+.swipeIndicator.left {
+    left: 20px;
+    color: #ff4757;
+    border-color: #ff4757;
+    background: rgba(255, 71, 87, 0.1);
+}
+
+.swipeIndicator.right {
+    right: 20px;
+    color: #2ed573;
+    border-color: #2ed573;
+    background: rgba(46, 213, 115, 0.1);
+}
+
+@keyframes pulse {
+    0% { transform: translateY(-50%) scale(0.8); opacity: 0; }
+    100% { transform: translateY(-50%) scale(1); opacity: 1; }
+}
+
+/* === Кнопки действий === */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+    position: fixed;
+    top: 75%;
+    left: 0;
+    right: 0;
+    z-index: 50;
+}
+
+
+.actionButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 80px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background: #fff;
+}
+
+.actionButton:hover {
+    transform: translateY(-3px);
+}
+
+.dislike {
+    color: #ff4757;
+}
+
+.like {
+    color: #2ed573;
+}
+
+.buttonIcon {
+    font-size: 0.8rem;
+}
+
+/* === Нижняя навигация === */
+.bottomNav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(16px);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+    z-index: 100;
+}
+
+.navButton {
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+.navButton:hover {
+    background: rgba(233, 30, 99, 0.1);
+}
+
+.navIcon {
+    font-size: 1.5rem;
+    color: #e91e63;
+}
+
+.navText {
+    font-size: 0.8rem;
+    color: #666;
+    font-weight: 500;
+}
+
+/* === Пустое состояние === */
+.emptyState {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    color: #fff;
+}
+
+.primaryButton {
+    background: #fff;
+    color: #e91e63;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.primaryButton:hover {
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+    .buttons {
+       display: none;
+    }
+}
+ 
+@media (max-height: 700px) {
+    .buttons {
+       display: none;
+    }
+}
+ 
+
+/* Для больших экранов (только когда высота достаточная) */
+@media (min-width: 1024px) and (min-height: 700px) {
+    .buttons {
+        gap: 2rem;
+        padding: 1rem;
+    }
+    
+    .actionButton {
+        padding: 1rem 1.8rem;
+        font-size: 1rem;
+        min-width: 80px;
+    }
+    
+    .buttonIcon {
+        font-size: 1.8rem;
+    }
+    
+    .buttonText {
+        font-size: 0.9rem;
+    }
+}
+
+/* Для очень больших экранов */
+@media (min-width: 1440px) and (min-height: 700px) {
+    .actionButton {
+        padding: 1.2rem 2.2rem;
+        font-size: 1.1rem;
+    }
+    
+    .buttonIcon {
+        font-size: 2rem;
+    }
+}

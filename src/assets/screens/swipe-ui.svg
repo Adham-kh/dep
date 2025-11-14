@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <defs>
+    <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="1200" height="720" fill="url(#g2)"/>
+  <rect x="380" y="120" width="440" height="520" rx="20" fill="#ffffff" stroke="#e2e8f0"/>
+  <rect x="420" y="540" width="360" height="60" rx="12" fill="#0ea5e9" opacity="0.08"/>
+  <circle cx="520" cy="640" r="36" fill="#fee2e2" stroke="#fecaca"/>
+  <circle cx="680" cy="640" r="36" fill="#dcfce7" stroke="#bbf7d0"/>
+  <g font-family="Inter, Arial, sans-serif" fill="#1e293b" font-size="28" font-weight="700">
+    <text x="100" y="100">Swipe Screen</text>
+  </g>
+  <g font-family="Inter, Arial, sans-serif" fill="#64748b" font-size="16">
+    <text x="100" y="140">Это заглушка скриншота Swipe. Замените файл на реальный скрин: src/assets/screens/swipe-ui.svg → swipe-ui.png (или обновите импорты).</text>
+  </g>
+</svg>
+

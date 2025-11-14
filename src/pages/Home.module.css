@@ -1,0 +1,331 @@
+
+/* Контейнер страницы */
+.section { 
+  width: 100%; 
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ========================
+   🎨 КОМПОНЕНТЫ
+======================== */
+
+/* HERO блок */
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: linear-gradient(180deg, #fff, #f8fafc);
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: var(--radius, 12px);
+  padding: 24px;
+  box-shadow: var(--shadow, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
+  margin-bottom: 18px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Карточки */
+.card {
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: var(--radius, 12px);
+  padding: 20px;
+  box-shadow: var(--shadow, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
+  margin: 12px 0;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Grid технологий */
+.techGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 18px;
+  margin: 18px 0 26px;
+}
+
+.techCard {
+  background: var(--card-bg, #ffffff);
+  border-radius: var(--radius, 12px);
+  border: 1px solid var(--border, #e2e8f0);
+  box-shadow: var(--shadow, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out forwards;
+  transition: all 0.3s ease;
+}
+
+/* Диаграмма потока свайпа */
+.flow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.flowItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px dashed var(--border, #e2e8f0);
+  border-radius: 10px;
+  background: #fff;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Галерея скриншотов */
+.gallery {
+  margin-top: 10px;
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.shot {
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: var(--shadow, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* ========================
+   📝 ТИПОГРАФИКА
+======================== */
+
+.title { 
+  font-size: 1.9rem; 
+  line-height: 1.2; 
+  margin: 0;
+}
+
+.subtitle { 
+  color: var(--text-muted, #64748b); 
+  margin: 0;
+  line-height: 1.5;
+}
+
+.card h3 {
+  margin: 0 0 12px 0;
+  font-size: 1.3rem;
+}
+
+/* Списки */
+.list { 
+  margin: 8px 0 0; 
+  padding-left: 20px;
+  padding-right: 8px;
+}
+
+.list li {
+  margin: 8px 0;
+  line-height: 1.5;
+  padding-right: 5px;
+}
+
+.roadmap { 
+  margin-top: 6px; 
+}
+
+.roadmap li { 
+  margin: 6px 0; 
+}
+
+.muted { 
+  color: var(--text-muted, #64748b); 
+  line-height: 1.5;
+}
+
+/* ========================
+   🔘 ЭЛЕМЕНТЫ UI
+======================== */
+
+/* Быстрые действия (CTA) */
+.ctaRow { 
+  display: flex; 
+  gap: 12px; 
+  flex-wrap: wrap; 
+  margin: 12px 0 4px; 
+}
+
+/* Бейджи */
+.flowBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #eef2ff;
+  color: #3730a3;
+  font-weight: 700;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+/* Изображения */
+.techCard img { 
+  width: 46px; 
+  height: 46px; 
+  object-fit: contain; 
+  margin-bottom: 6px; 
+  transition: transform 0.3s ease;
+}
+
+.shotImg {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.shotCaption {
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  color: var(--text-muted, #64748b);
+  margin: 0;
+}
+
+/* Код */
+code {
+  background: #f1f5f9;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Consolas', monospace;
+  font-size: 0.9em;
+  color: #475569;
+}
+
+.list li code {
+  font-size: 0.85em;
+  white-space: nowrap;
+}
+
+/* Футер */
+.footer { 
+  margin-top: 22px; 
+  color: var(--text-muted, #64748b); 
+  text-align: center;
+  padding: 20px 0;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* ========================
+   🎭 АНИМАЦИИ
+======================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ========================
+   ✨ ИНТЕРАКТИВНОСТЬ
+======================== */
+
+/* TechCard анимации и hover */
+.techCard:nth-child(1) { animation-delay: 0.1s; }
+.techCard:nth-child(2) { animation-delay: 0.2s; }
+.techCard:nth-child(3) { animation-delay: 0.3s; }
+.techCard:nth-child(4) { animation-delay: 0.4s; }
+.techCard:nth-child(5) { animation-delay: 0.5s; }
+
+.techCard:hover img {
+  transform: scale(1.1);
+}
+
+.techCard span { 
+  font-weight: 600; 
+  color: var(--text, #1e293b); 
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.techCard:hover span {
+  color: var(--accent, #6c63ff);
+}
+
+.techCard:hover { 
+  transform: translateY(-6px) scale(1.02); 
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.12);
+  border-color: rgba(37, 99, 235, 0.2);
+}
+
+/* Чередующиеся анимации для карточек */
+.card:nth-child(odd) {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.card:nth-child(even) {
+  animation: slideInRight 0.6s ease-out;
+}
+
+/* ========================
+   📱 АДАПТИВНОСТЬ
+======================== */
+
+@media (max-width: 768px) {
+  .section {
+    padding: 15px;
+  }
+  
+  .title { 
+    font-size: 1.6rem; 
+  }
+  
+  .techGrid { 
+    gap: 14px; 
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+  
+  .card {
+    padding: 16px;
+  }
+  
+  .list {
+    padding-left: 18px;
+  }
+}

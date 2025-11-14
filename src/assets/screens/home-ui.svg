@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="1200" height="720" fill="url(#g)"/>
+  <rect x="80" y="60" width="1040" height="90" rx="14" fill="#ffffff" stroke="#e2e8f0"/>
+  <rect x="80" y="180" width="1040" height="160" rx="14" fill="#ffffff" stroke="#e2e8f0"/>
+  <rect x="80" y="360" width="1040" height="260" rx="14" fill="#ffffff" stroke="#e2e8f0"/>
+  <g font-family="Inter, Arial, sans-serif" fill="#1e293b" font-size="28" font-weight="700">
+    <text x="100" y="120">Header / Hero</text>
+    <text x="100" y="240">CTA + Guest Notice</text>
+    <text x="100" y="420">Tech Grid / Cards</text>
+  </g>
+  <g font-family="Inter, Arial, sans-serif" fill="#64748b" font-size="16">
+    <text x="100" y="460">Это заглушка скриншота Home. Замените файл на реальный скрин: src/assets/screens/home-ui.svg → home-ui.png (или обновите импорты).</text>
+  </g>
+</svg>
+
